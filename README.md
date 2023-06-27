@@ -1,4 +1,9 @@
-# Getting Started with Create React App
+# React Blog
+This is a react implementation of the frontend app of a dojo blog
+A beginner-level project React project. 
+The backend can be implemented by using any simple API service like JSON Server or a serverless service.
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
