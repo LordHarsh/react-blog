@@ -1,11 +1,10 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-
 const app = express();
+require('dotenv').config();
 
 app.use(bodyParser.json());
-
 mongoose.connect(process.env.MONGO_URI);
 mongoose.Promise = global.Promise;
 
