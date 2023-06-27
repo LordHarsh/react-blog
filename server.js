@@ -32,6 +32,6 @@ app.post('/blogs', async (req, res) => {
   res.send(blog);
 });
 
-app.listen(3000, () => {
-  console.log('Server listening on port 3000');
+app.listen(4000, () => {
+  console.log('Server listening on port 5000');
 });
