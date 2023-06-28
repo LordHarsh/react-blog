@@ -7,13 +7,7 @@
     },
     {
       "src": "package.json",
-      "use": {
-        "command": "npm install && npm run build",
-        "env": {
-          "CI": "1",
-          "NODE_ENV": "production"
-        }
-      }
+      "use": "@vercel/static-build"
     }
   ],
   "routes": [
