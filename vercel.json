@@ -6,16 +6,11 @@
       "use": "@vercel/node"
     },
     {
-      "src": "src/**/*",
-      "use": {
-        "builder": "@vercel/static-build",
-        "config": {
-          "distDir": "build",
-          "cmd": "npm run build"
-        }
-      }
+      "src": "package.json",
+      "use": "@vercel/static-build"
     }
   ],
+  "rewrites": [{ "source": "/(.*)", "destination": "/" }],
   "routes": [
     {
       "src": "/blogs/(.*)",
