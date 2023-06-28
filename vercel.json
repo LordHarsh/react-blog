@@ -13,7 +13,6 @@
       }
     }
   ], 
-  "rewrites": [{ "source": "/(.*)", "destination": "/" }],
   "routes": [
     {
       "src": "/blogs/(.*)",
