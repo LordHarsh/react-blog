@@ -3,6 +3,8 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const app = express();
 require('dotenv').config();
+const cors = require('cors');
+app.use(cors());
 
 app.use(bodyParser.json());
 mongoose.connect(process.env.MONGO_URI);
@@ -27,9 +29,16 @@ app.get('/blogs/:id', async (req, res) => {
 
 app.post('/blogs', async (req, res) => {
   const blog = new Blog(req.body);
+  console.log(blog);
   await blog.save();
   res.send(blog);
 });
+
+app.delete('/blogs/:id', async (req, res) => {
+  await Blog.findByIdAndDelete(req.params.id);
+  res.send('Blog deleted successfully');
+});
+
 
 app.listen(5000, () => {
   console.log('Server listening on port 5000');
