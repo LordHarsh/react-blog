@@ -12,7 +12,8 @@ mongoose.Promise = global.Promise;
 
 const blogSchema = new mongoose.Schema({
   title: String,
-  content: String,
+  body: String,
+  author: String
 });
 
 const Blog = mongoose.model('Blog', blogSchema);
@@ -28,7 +29,9 @@ app.get('/blogs/:id', async (req, res) => {
 });
 
 app.post('/blogs', async (req, res) => {
-  const blog = new Blog(req.body);
+  const { title, body, author } = req.body;
+  console.log(req.body)
+  const blog = new Blog({ title, body, author });
   console.log(blog);
   await blog.save();
   res.send(blog);
