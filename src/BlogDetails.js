@@ -9,7 +9,7 @@ const BlogDetails = () => {
     const {data: blog, error, isPending} = useFetch(jsonServerUrl + id)
     
     const handleClick = () => {
-        fetch(jsonServerUrl + blog.id, {
+        fetch(jsonServerUrl + blog._id, {
             method: 'DELETE'
         }).then(()=>{
             history.push('/')
