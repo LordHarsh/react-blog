@@ -12,14 +12,12 @@
   ],
   "routes": [
     {
-      "src": "/(.*)",
+      "src": "/blogs/(.*)",
       "dest": "/server.js"
     },
-    { "src": "^/static/(.*)", "dest": "/build/static/$1" },
-    { "src": "/favicon.ico", "dest": "/build/favicon.ico" },
-    { "src": "/manifest.json", "dest": "/build/manifest.json" },
-    { "src": "/robots.txt", "dest": "/build/robots.txt" },
-    { "src": "/(.*)", "dest": "/build/index.html" }
-    
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
   ]
 }
